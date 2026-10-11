@@ -8,7 +8,7 @@ GitHub repository name: `media-scout`.
 
 1. Push this project to a GitHub repository on the `main` branch.
 2. In the repository, open **Settings → Pages** and set the build and deployment source to **GitHub Actions**.
-3. Under **Settings → Secrets and variables → Actions**, add these names as repository secrets or variables:
+3. Under **Settings → Secrets and variables → Actions**, add these names as repository secrets or variables. If you store them as environment secrets or variables instead, use the `github-pages` environment:
    - `VITE_UNSPLASH_KEY`
    - `VITE_PEXELS_KEY` (the previous misspelling `VITE_PEXLES_KEY` is also accepted)
    - `VITE_GIPHY_KEY`
