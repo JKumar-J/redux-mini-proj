@@ -1,0 +1,181 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+  font-family: 'Inter', sans-serif;
+  color: #f4f4f5;
+  background: #0b0b12;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+
+  --bg: #0b0b12;
+  --surface: #15151f;
+  --surface-hover: #20202d;
+  --border: rgba(255, 255, 255, 0.09);
+  --text: #f4f4f5;
+  --muted: #9292a5;
+  --accent: #8b5cf6;
+  --accent-hover: #a78bfa;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 50% -20%, rgba(124, 58, 237, 0.18), transparent 55%),
+    var(--bg);
+}
+
+button, input {
+  font: inherit;
+}
+
+button {
+  transition: background 180ms ease, border-color 180ms ease,
+    transform 180ms ease;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid var(--accent-hover);
+  outline-offset: 3px;
+}
+
+.app-container {
+  width: min(1600px, 100%);
+  margin: 0 auto;
+  padding: 30px clamp(16px, 4vw, 56px) 60px;
+}
+
+.app-header {
+  margin-bottom: 36px;
+}
+
+.app-header h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(25px, 3vw, 32px);
+  font-weight: 800;
+  letter-spacing: -1.3px;
+}
+
+.app-header h1 span {
+  color: var(--accent-hover);
+}
+
+.app-header p {
+  margin: 9px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.search-bar {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  padding: 7px;
+  margin-bottom: 26px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: rgba(24, 24, 36, 0.88);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(18px);
+}
+
+.search-bar:focus-within {
+  border-color: rgba(167, 139, 250, 0.7);
+  box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.1);
+}
+
+.search-bar input {
+  flex: 1;
+  min-width: 0;
+  padding: 13px 15px;
+  border: none;
+  outline: none;
+  color: var(--text);
+  background: transparent;
+  font-size: 15px;
+}
+
+.search-bar input::placeholder {
+  color: #77778c;
+}
+
+.search-bar button {
+  padding: 0 24px;
+  border: 0;
+  border-radius: 11px;
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.search-bar button:hover {
+  background: linear-gradient(135deg, #a78bfa, #7c3aed);
+  transform: translateY(-1px);
+}
+
+.media-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 22px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+}
+
+.media-tabs button {
+  padding: 10px 19px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: #a1a1b5;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.media-tabs button:hover {
+  background: var(--surface-hover);
+  color: white;
+}
+
+.media-tabs button.active {
+  border-color: rgba(167, 139, 250, 0.25);
+  background: rgba(139, 92, 246, 0.16);
+  color: #c4b5fd;
+}
+
+@media (max-width: 520px) {
+  .app-container {
+    padding: 22px 14px 40px;
+  }
+
+  .search-bar {
+    gap: 4px;
+    padding: 5px;
+  }
+
+  .search-bar input {
+    padding: 12px 9px;
+    font-size: 14px;
+  }
+
+  .search-bar button {
+    padding: 0 14px;
+    font-size: 14px;
+  }
+
+  .media-tabs button {
+    padding: 9px 14px;
+  }
+}
