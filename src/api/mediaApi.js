@@ -40,7 +40,6 @@ export async function fetchVideos(query, per_page = 10) {
 
 export async function fetchSticker(
   q,
-  per_page = 10,
   api_key = GIPHY_KEY,
   limit = 10
 ) {
